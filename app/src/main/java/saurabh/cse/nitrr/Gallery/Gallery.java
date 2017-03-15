@@ -89,7 +89,7 @@ public class Gallery extends AppCompatActivity implements SwipeRefreshLayout.OnR
 //        progressBarimage = (ProgressBar) findViewById(R.id.imageProgressBarimage);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
-        //Initializing our superheroes list
+        //Initializing our galleryitem list
         listgallery = new ArrayList<>();
         requestQueue = Volley.newRequestQueue(this);
 
