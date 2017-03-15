@@ -1,0 +1,123 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="saurabh.cse.nitrr.Fragment1">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="8dp"
+            app:contentPadding="8dp"
+
+            >
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:baselineAligned="true">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:contentPadding="8dp"
+                android:id="@+id/cardAbout"
+
+                >
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/nnewlogo"
+                    />
+
+
+
+        </android.support.v7.widget.CardView>
+
+
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:contentPadding="8dp"
+
+                >
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:text="Prantadhyaksya"
+                android:textStyle="bold"
+                android:id="@+id/b1"
+                android:background="#ffffff" />
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:contentPadding="8dp"
+
+                >
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:text="Leadership"
+                    android:textStyle="bold"
+
+                    android:id="@+id/b2"
+                    android:background="#ffffff" />
+            </android.support.v7.widget.CardView>
+
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:contentPadding="8dp"
+
+                >
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:text="Important Links"
+                    android:textStyle="bold"
+
+                    android:id="@+id/b5"
+                    android:background="#ffffff" />
+            </android.support.v7.widget.CardView>
+
+
+
+
+        </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </ScrollView>
+
+
+</FrameLayout>

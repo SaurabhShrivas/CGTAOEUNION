@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:baselineAligned="true">
+
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="250dp">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="250dp"
+            android:id="@+id/imageView"
+
+            android:background="@drawable/nnewlogo"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+    </RelativeLayout>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:baselineAligned="true">
+
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:text="Prantadhyaksya"
+                android:textStyle="bold"
+                android:id="@+id/b1"
+                android:background="#ffffff" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:text="Leadership"
+                android:textStyle="bold"
+
+                android:id="@+id/b2"
+                android:background="#ffffff" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:text="About"
+                android:textStyle="bold"
+
+                android:id="@+id/b3"
+                android:background="#ffffff" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:text="Register"
+                android:textStyle="bold"
+
+                android:id="@+id/b4"
+                android:background="#ffffff" />
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:text="Important Links"
+                android:textStyle="bold"
+
+                android:id="@+id/b5"
+                android:background="#ffffff" />
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
