@@ -1,5 +1,6 @@
 package saurabh.cse.nitrr.Leadership;
         import android.content.Context;
+        import android.content.Intent;
         import android.support.v7.widget.RecyclerView;
         import android.view.LayoutInflater;
         import android.view.View;
@@ -13,6 +14,7 @@ package saurabh.cse.nitrr.Leadership;
 
         import java.util.ArrayList;
 
+        import saurabh.cse.nitrr.Gallery.FullScreenImage;
         import saurabh.cse.nitrr.R;
 
 public class LcardAdapter extends RecyclerView.Adapter<LcardAdapter.ViewHolder> {
@@ -24,13 +26,13 @@ public class LcardAdapter extends RecyclerView.Adapter<LcardAdapter.ViewHolder> 
 
     int lastPosition = -1;
 
-    //List to store all superheroes
+    //List to store all leaders
     ArrayList<LContent> ourleaders;
 
     //Constructor of this class
     public LcardAdapter(ArrayList<LContent> ourleaders, Context context){
         super();
-        //Getting all superheroes
+        //Getting all leaders
         this.ourleaders = ourleaders;
         this.context = context;
     }
@@ -44,10 +46,10 @@ public class LcardAdapter extends RecyclerView.Adapter<LcardAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
 
         //Getting the particular item from the list
-        LContent lContent =  ourleaders.get(position);
+        final LContent lContent =  ourleaders.get(position);
 
         //Loading image from url
         imageLoader = LCustomVolleyRequest.getInstance(context).getImageLoader();
@@ -58,6 +60,27 @@ public class LcardAdapter extends RecyclerView.Adapter<LcardAdapter.ViewHolder> 
         holder.textViewId.setText(lContent.getId());
         holder.textViewName.setText(lContent.getName());
         holder.textViewPost.setText(lContent.getPost());
+
+
+        holder.imageView.setOnClickListener(new  View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent=new Intent(context,FullScreenImage.class);
+                intent.putExtra("imageUrl", lContent.getImageUrl());
+                intent.putExtra("id", lContent.getId());
+                context.startActivity(intent);
+
+
+
+            }
+        });
+
+
+
+
 
 
 

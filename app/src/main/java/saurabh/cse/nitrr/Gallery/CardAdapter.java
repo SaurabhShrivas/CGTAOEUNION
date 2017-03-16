@@ -1,11 +1,14 @@
 package saurabh.cse.nitrr.Gallery;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
@@ -51,7 +54,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
 
         //Getting the particular item from the list
         final GalleryContent galleryContent =  galleryContents.get(position);
@@ -65,19 +68,48 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         holder.textViewId.setText(galleryContent.getId());
 
 
+
         holder.imageView.setOnClickListener(new  View.OnClickListener()
         {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(v.getContext(), "OnClick :" + galleryContents.get(position), Toast.LENGTH_SHORT).show();
+           //     Toast.makeText(v.getContext(), "OnClick :" + galleryContents.get(position), Toast.LENGTH_SHORT).show();
 
                 Intent intent=new Intent(context,FullScreenImage.class);
                 intent.putExtra("imageUrl", galleryContent.getImageUrl());
                 intent.putExtra("id", galleryContent.getId());
-
-
                 context.startActivity(intent);
+
+
+            /*
+
+                  WindowManager windowmanager = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
+                DisplayMetrics dimension = new DisplayMetrics();
+                windowmanager.getDefaultDisplay().getMetrics(dimension);
+                final int height = dimension.heightPixels;
+
+                ValueAnimator anim = ValueAnimator.ofInt(holder.imageView.getMeasuredHeightAndState(),height);
+                anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        int val = (Integer) valueAnimator.getAnimatedValue();
+                        ViewGroup.LayoutParams layoutParams = holder.imageView.getLayoutParams();
+                        layoutParams.height = val;
+                        holder.imageView.setLayoutParams(layoutParams);
+                    }
+                });
+                anim.start();
+
+
+
+
+
+
+
+
+
+             */
             }
         });
 

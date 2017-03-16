@@ -4,6 +4,7 @@ import android.os.Build;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -26,8 +27,6 @@ public class Gallery extends AppCompatActivity implements SwipeRefreshLayout.OnR
 
     //Creating a List of galleryContent
     private ArrayList<GalleryContent> listgallery;
-
-
     private SwipeRefreshLayout swipeRefreshLayout;
 
     //Creating Views
@@ -52,6 +51,8 @@ public class Gallery extends AppCompatActivity implements SwipeRefreshLayout.OnR
         setContentView(R.layout.activity_gallery);
 
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
+
+        layoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
 
         Toolbar toolbar1= (Toolbar) findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar1);
@@ -84,12 +85,12 @@ public class Gallery extends AppCompatActivity implements SwipeRefreshLayout.OnR
         //Initializing Views
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
+    //    layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 //        progressBarimage = (ProgressBar) findViewById(R.id.imageProgressBarimage);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
-        //Initializing our superheroes list
+        //Initializing our galleryContent list
         listgallery = new ArrayList<>();
         requestQueue = Volley.newRequestQueue(this);
 

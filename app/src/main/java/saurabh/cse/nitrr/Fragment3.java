@@ -129,7 +129,6 @@ public class Fragment3 extends Fragment {
         return jsonArrayRequest;
     }
 
-    //This method will get data from the web api
     private void getData() {
         //Adding the method to the queue by calling the method getDataFromServer
         requestQueue.add(getDataFromServer(requestCount));
@@ -175,17 +174,4 @@ public class Fragment3 extends Fragment {
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 

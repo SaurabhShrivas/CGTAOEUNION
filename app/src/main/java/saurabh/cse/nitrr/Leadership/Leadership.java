@@ -27,7 +27,7 @@ import saurabh.cse.nitrr.R;
 public class Leadership extends AppCompatActivity{
 
 
-    //Creating a List of superheroes
+    //Creating a List of leaders
     private ArrayList<LContent> listourleaders;
 
     LcardAdapter adapter1;
@@ -68,7 +68,7 @@ public class Leadership extends AppCompatActivity{
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        //Initializing our superheroes list
+        //Initializing our leaders list
         listourleaders = new ArrayList<>();
         requestQueue = Volley.newRequestQueue(this);
 
@@ -155,7 +155,7 @@ public class Leadership extends AppCompatActivity{
                 //Getting json
                 json = array.getJSONObject(i);
 
-                //Adding data to the superhero object
+                //Adding data to the lcontent object
                 lContent.setImageUrl(json.getString(Lconfig.TAG_IMAGE_URL));
                 lContent.setId(json.getString(Lconfig.TAG_ID));
                 lContent.setName(json.getString(Lconfig.TAG_NAME));
@@ -164,7 +164,7 @@ public class Leadership extends AppCompatActivity{
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //Adding the superhero object to the list
+            //Adding the lcontent object to the list
             listourleaders.add(lContent);
         }
 
